@@ -1,0 +1,2 @@
+##不上传grunt依赖包##
+/bin/node_modules/
