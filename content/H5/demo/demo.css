@@ -3,7 +3,7 @@ html, body{
     padding: 0;
     height: 100%;
     width: 100%;
-    font-size: 12px;
+    font-size: 22px;
     color: #787878;
     font-family: 'Microsoft YaHei', Arial;
 }
@@ -13,18 +13,16 @@ p{
 header img, footer img{
     width: 100%;
 }
-footer{
-    height: 41px;
-}
 .content{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     height: 100%;
-    overflow: auto;
-    -webkit-overflow-scroll: touch;
+    overflow: hidden;
 }
 .main{
     -webkit-box-flex: 1;
+    overflow: auto;
+    -webkit-overflow-scroll: touch;
 }
 ul, li{
     margin: 0;
@@ -33,20 +31,21 @@ ul, li{
 }
 li{
     border-bottom: 1px solid #eee;
-    padding: 6px;
+    padding: 16px;
     display: -webkit-box;
+    opacity: 0;
 }
 .head-img{
-    width: 48px;
-    min-height: 48px;
-    border-radius: 2px;
+    width: 78px;
+    min-height: 78px;
+    border-radius: 5px;
 }
 .msg-box{
     position: relative;
     -webkit-box-flex: 1;
     vertical-align: top;
-    height: 48px;
-    margin: 0 6px 0 12px;
+    height: 78px;
+    margin: 0 6px 0 16px;
 }
 .head{
     position: relative;
@@ -58,9 +57,9 @@ li{
     position: absolute;
     right: -6px;
     top: -6px;
-    width: 16px;
-    height: 16px;
-    line-height: 16px;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
     text-align: center;
 }
 .msg{
@@ -71,9 +70,15 @@ li{
 .name{
     color:#000;
 }
-.time{
 
+.fade-in{
+    -webkit-animation: fade-in .8s linear;
+    -webkit-animation-fill-mode: forwards;
 }
 
+@-webkit-keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1}
+}
 
 

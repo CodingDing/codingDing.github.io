@@ -3,24 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>微信(12)</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
-    <link rel="stylesheet" href="demo.css" />
+    <meta name="viewport"/>
+    <link rel="stylesheet" href="demo.css"/>
+    <style>
+        .loading-box {
+            -webkit-animation: spin 2s infinite linear;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 45%;
+            left: 45%;
+        }
+        .circle{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .circle:nth-child(1){
+            -webkit-transform: rotate(70deg);
+        }
+        .circle:nth-child(2){
+            -webkit-transform: rotate(140deg);
+        }
+        .inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            border: 5px solid rgba(0, 255, 170, 0.7);
+            border-right: none;
+            border-top: none;
+            backgroudn-clip: padding;
+            box-shadow: inset 0px 0px 10px rgba(0, 255, 170, 0.15);
+        }
+        @-webkit-keyframes spin {
+            from{-webkit-transform: rotate(0deg)}
+            to{-webkit-transform: rotate(360deg)}
+        }
+    </style>
+    <script>
+        (function () {
+            var scale = window.screen.width / 640;
+            var meta = document.querySelector('meta[name="viewport"]');
+            var str = ['width=640,initial-scale=', ',maximum-scale=', ',minimum-scale=', ',user-scalable=no'];
+            meta.setAttribute('content', str.join(scale));
+        })();
+    </script>
 </head>
 <body>
-    <div class="content">
+<div class="content" style="display: none;">
     <div class="main">
         <header>
-            <img src="top.jpg"/>
+            <img id="header-img"/>
         </header>
-        <ul>
-            <li>
+        <ul id="msg-ul">
+            <li class="fade-in">
                 <div class="head">
                     <img src="head.jpg" class="head-img"/>
                     <span class="msg-count">1</span>
                 </div>
                 <div class="msg-box">
                     <p class="name">李国顺</p>
-                    <p class="msg">快回公司加班！</p>
+
+                    <p class="msg">test</p>
                 </div>
                 <div>
                     22:22
@@ -29,8 +73,24 @@
         </ul>
     </div>
     <footer>
-        <img src="bottom.jpg"/>
+        <img id="footer-img"/>
     </footer>
+</div>
+
+<div class="loading-box">
+    <div class="circle">
+        <div class="inner"></div>
     </div>
+    <div class="circle">
+        <div class="inner"></div>
+    </div>
+    <div class="circle">
+        <div class="inner"></div>
+    </div>
+    <div class="circle">
+        <div class="inner"></div>
+    </div>
+</div>
+<script src="demo.js"></script>
 </body>
 </html>
